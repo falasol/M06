@@ -332,5 +332,5 @@ Reinartz, W., Krafft, M., & Hoyer, W. D. (2004). The customer relationship manag
 **Appendix links**
 
 - [Group 7 CEP project](https://falasol.github.io/MSDM-CEP/cep-group-7.html)
-- [Github Repo](https://falasol.github.io/MSDM-CEP/cep-group-7.html#sec-investigation-of-currently-available-research-frameworkmodel)
-- [Github Pages of This Slide](https://quarto.org/docs/presentations/revealjs/)
+- [Github Repo](https://github.com/falasol/M06)
+- [Github Pages of This Slide](https://falasol.github.io/M06/Avenue_Shabu_CEP_Revealjs_Presentation.html#/title-slide)

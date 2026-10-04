@@ -26,7 +26,7 @@ Its main strengths over PPT are reproducibility, web-based publishing, and integ
 
 # In **Step 2**, you were asked to create a Revealjs presentation. **Provide a link to the presentation you published on the web**.
 
-> **Presentation link:** [Open the local presentation file](Avenue_Shabu_CEP_Revealjs_Presentation.html). Replace this local link with the published Quarto Pub or GitHub Pages URL before submission.
+> **Presentation link:** <https://falasol.github.io/M06/Avenue_Shabu_CEP_Revealjs_Presentation.html#/title-slide>
 
 ## Add at least one reproducible chart or table in the presentation.
 
