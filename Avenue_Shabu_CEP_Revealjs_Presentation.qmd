@@ -1,0 +1,336 @@
+---
+title: "Avenue Shabu CRM"
+author: "Frank Renn"
+date: today
+format:
+  revealjs:
+    theme: serif
+    width: 1600
+    height: 900
+    footer: "Avenue Shabu CRM Analysis"
+    transition: slide
+    transition-speed: default
+    incremental: false
+    toc: true
+    toc-depth: 1
+    slide-number: true
+    scrollable: true
+    smaller: true
+    code-fold: false
+    code-overflow: wrap
+    number-sections: false
+    number-depth: 5
+    embed-resources: true
+editor: visual
+execute:
+  echo: true
+  freeze: auto
+---
+
+## Table of Contents {#table-of-contents}
+
+1.  Introduction
+    1.  Problem statement
+    2.  One Analytics Objective
+    3.  Importance
+2.  Literature review
+    1.  Existence of well-established consumer behavior theory/models relevant for the project
+    2.  Assessment of the adequateness of the gathered information/data in solving business problems
+    3.  Need for additional analysis to address the said business problems?
+3.  Methods
+    1.  Data and Sampling
+    2.  Data wrangling
+    3.  Sample characteristics
+    4.  Measures
+    5.  Analytics Methods
+4.  References
+
+::: notes
+This presentation narrows the Group 7 CEP project to AO1. The story moves from Avenue Shabu's profit goal to an evidence-based process for identifying repeat-visit opportunities and testing CRM communication.
+:::
+
+## Introduction
+
+Our project examines how Avenue Shabu can connect digital marketing, customer experience, POS behavior, revenue, and profitability. This presentation focuses on **AO1**:
+
+> Identify customer segments and retention opportunities to increase profitable repeat visits.
+
+The proposal treats customer-level marketing as a measurement problem as well as a communication problem. A message cannot be evaluated reliably unless visits can be linked to customers and campaign exposure can be documented.
+
+::: notes
+The full project includes several analytics objectives. This presentation addresses only AO1 and does not claim to answer the group's advertising, Instagram, review, or promotion objectives.
+:::
+
+## Problem statement
+
+::::: columns
+::: {.column width="52%"}
+**Business context**
+
+- Avenue Shabu wants to increase profit.
+- PO1 is to increase profitable repeat-customer revenue through CRM and email/SMS marketing.
+- Management needs evidence connecting marketing activity to visits, revenue, and profitability.
+:::
+
+::: {.column width="48%"}
+**AO1 problem**
+
+Toast guest and transaction records may exist, but incomplete or inconsistent email, phone, or account identifiers may prevent reliable customer-level linkage.
+
+**Decision question:** Which customers should receive retention communication, and how will a resulting return visit be measured?
+:::
+:::::
+
+The problem is therefore not simply to send more promotions. It is to identify valuable and inactive customer segments, understand retention opportunities, and evaluate whether communication supports profitable repeat behavior.
+
+::: notes
+Emphasize that the current presentation is a proposal. The available local project materials describe the business problem and the needed data, but they do not establish current customer retention performance.
+:::
+
+## One Analytics Objective
+
+**AO1. Identify customer segments and retention opportunities to increase profitable repeat visits (Frank Renn).**
+
+The project source operationalizes this objective as auditing Toast guest data, defining repeat customers, identifying valuable and inactive segments, and recommending measurable email/SMS campaigns to improve retention and revenue.
+
+::: incremental
+- Define a repeat customer as a customer with at least two visits during the selected observation window.
+- Segment customers using recency, frequency, spending, and available customer-value indicators.
+- Recommend and measure retention communications for segments with different needs.
+:::
+
+The primary behavioral outcome is repeat visitation within 180 days. Campaign impact should be described as causal only when treatment and comparison groups are designed appropriately.
+
+[The objective connects segmentation to a business outcome: profitable return visits, not engagement metrics alone.]{.fragment .fade-up}
+
+::: notes
+The objective has one central outcome—profitable repeat visits. RFM is a practical starting point for segmentation, but it is not itself proof that a segment will respond to a message.
+:::
+
+## Importance
+
+::::::: columns
+:::: {.column width="50%"}
+**Business importance**
+
+::: {.fragment .fade-up}
+- Retention can create more sustainable revenue than one-time discounts.
+- Targeted communication can reduce irrelevant offers and protect margin.
+- Customer-level evidence can improve CRM and email/SMS decisions.
+:::
+::::
+
+:::: {.column width="50%"}
+**Analytical importance**
+
+::: {.fragment .fade-up}
+- Customer identifiers determine whether repeat visits can be observed.
+- Satisfaction and dining experience may influence retention before CRM does.
+- Profitability requires revenue, cost, redemption, and opt-out measures.
+:::
+::::
+:::::::
+
+AO1 matters because an increase in visits is not automatically an increase in profit. The analysis should distinguish high revenue from high contribution, short-term redemption from sustainable retention, and association from campaign lift.
+
+## Literature review
+
+The AO1 literature supports a connected framework rather than a single promotional tactic:
+
+**Customer experience and perceived value → satisfaction and trust → CRM engagement and retention → repeat visits → customer value and profitability**
+
+This framework follows the Group 7 research review. It recognizes that email, SMS, and loyalty communications should support—not replace—food quality, service quality, atmosphere, cleanliness, price-value, and the overall dining experience.
+
+::: notes
+The framework is adapted from the AO1 research section in the Group 7 CEP report. It connects consumer behavior theory to the data and measurement decisions in the methods section.
+:::
+
+## Existence of well-established consumer behavior theory/models relevant for the project
+
+::::: columns
+::: {.column width="50%"}
+**Customer experience and value**
+
+- Customer experience occurs across multiple touchpoints and channels (Lemon & Verhoef, 2016).
+- Restaurant quality can influence perceived value, satisfaction, trust, and loyalty intentions (Kim & Han, 2008).
+- Restaurant customer value can include functional and emotional dimensions (Croitoru et al., 2024).
+:::
+
+::: {.column width="50%"}
+**CRM, retention, and segmentation**
+
+- CRM organizes relationship processes and evaluates customer and firm outcomes (Payne & Frow, 2005; Reinartz, Krafft, & Hoyer, 2004).
+- Customer value and lifetime value connect customer benefit to firm value (Kumar & Reinartz, 2016).
+- Loyalty programs and rewards can affect customer groups differently (Bolton, Kannan, & Bramlett, 2000; Liu, 2007; Park, Chung, & Woo, 2013).
+:::
+:::::
+
+These models justify using customer experience measures, RFM-style segmentation, retention outcomes, and profitability measures together. They do not justify assuming that every customer should receive the same offer.
+
+## Assessment of the adequateness of the gathered information/data in solving business problems
+
+::::: columns
+::: {.column width="50%"}
+**Adequate for**
+
+- Building a theoretical foundation for AO1.
+- Describing customer experience, CRM, loyalty, retention, and customer value.
+- Guiding a survey, Toast data audit, and retention measurement plan.
+:::
+
+::: {.column width="50%"}
+**Not yet adequate for**
+
+- Estimating Avenue Shabu's current satisfaction or retention rate.
+- Proving that email, SMS, or loyalty activity caused repeat visits.
+- Calculating true customer lifetime profit without cost and margin data.
+:::
+:::::
+
+The gathered literature is adequate to support the proposed model, but Avenue-specific customer and POS data are still necessary. The data audit should establish coverage, missingness, duplicate records, identifier-match rates, and the available history before the segments are interpreted.
+
+::: notes
+This assessment mirrors the AO1 report: the research supports the model, while the current evidence is insufficient to make Avenue-specific performance claims.
+:::
+
+## Need for additional analysis to address the said business problems?
+
+::: incremental
+1.  Measure current satisfaction with food quality, service, atmosphere, cleanliness, wait time, price-value, emotional experience, trust, and overall satisfaction.
+2.  Establish customer-level tracking with phone numbers, email addresses, or membership accounts that can be connected to Toast transactions.
+3.  Measure repeat-guest count, second-visit conversion, visit frequency, time between visits, and 30-, 60-, and 90-day retention.
+4.  Test thank-you messages, return-visit reminders, birthday offers, loyalty rewards, new-menu announcements, and targeted promotions by segment.
+5.  Compare exposed customers with a similar non-exposed group when possible, and evaluate incremental visits, spending, redemption, contribution margin, and customer lifetime value.
+:::
+
+The additional analysis would distinguish short-term promotional activity from sustainable retention and would clarify whether an observed relationship is causal or descriptive.
+
+## Methods
+
+The methods combine a data-quality audit, customer-level aggregation, descriptive segmentation, and campaign measurement. The design uses authorized data only and does not infer identity when the available identifiers are insufficient.
+
+::: notes
+The methods are intentionally staged. The project should not begin with campaign recommendations before confirming that customers can be identified consistently and that outcomes can be measured.
+:::
+
+## Data and Sampling
+
+::::: columns
+::: {.column width="54%"}
+**Potential sources**
+
+- Toast guest and transaction records
+- Visit dates and order totals
+- Promotion and campaign identifiers
+- Email/SMS permission and opt-out fields
+- Customer research on satisfaction and dining experience
+:::
+
+::: {.column width="46%"}
+**Sampling and units**
+
+- Use a census of all authorized in-scope transactions during the analysis period.
+- Use the customer as the segmentation unit.
+- Use visits or transactions for behavior summaries.
+- Use customer-campaign exposure for campaign evaluation.
+:::
+:::::
+
+If a campaign comparison is available, retain eligible exposed customers and select a comparable non-exposed group using the same eligibility rules. Report the analysis period, inclusion rules, customer-match rate, and missing-data rate.
+
+## Data wrangling
+
+The proposed workflow is:
+
+::: incremental
+1.  Review the Toast schema, reporting period, permissions, and identifier quality.
+2.  Standardize dates, timestamps, email values, phone numbers, and customer identifiers.
+3.  Flag duplicate transactions, invalid records, refunds, and unusual orders.
+4.  Link transactions to customers only when the matching rule is defensible.
+5.  Aggregate visits and spending by customer.
+6.  Calculate recency, frequency, monetary value, and retention measures.
+7.  Create segment labels and preserve a data dictionary and exclusion log.
+:::
+
+This workflow creates an audit trail so that a later campaign report can be reproduced when new Toast data are added.
+
+## Sample characteristics
+
+The table below is illustrative because authorized Toast data have not yet been confirmed. It demonstrates the intended customer-level structure and is not evidence about Avenue Shabu's actual customers.
+
+```{r}
+library(dplyr)
+library(knitr)
+
+customer_summary <- tibble(
+  customer_id = c("A01", "A02", "A03", "A04"),
+  visits = c(5, 2, 7, 1),
+  spending = c(420, 160, 610, 55),
+  segment = c("high-value", "developing", "high-value", "at-risk")
+)
+
+customer_summary |>
+  kable()
+```
+
+The illustration contains `r nrow(customer_summary)` customer records and `r sum(customer_summary$visits)` visits. The production analysis should also report unique customers, transactions, date range, identifier-match rate, missing values, segment counts, and the rule used to define a repeat customer.
+
+## Measures
+
+| Measure | Proposed definition | AO1 use |
+|:-----------------------|:-----------------------|:-----------------------|
+| Repeat customer | At least two visits in 180 days | Primary outcome |
+| Recency | Days since most recent visit | Identify inactive or at-risk customers |
+| Frequency | Number of visits in the analysis period | Identify repeat behavior |
+| Monetary value | Total or average spending | Prioritize value, not visits alone |
+| Second-visit conversion | Share of new guests returning | Evaluate early retention |
+| Campaign result | Incremental visits, revenue, margin, and redemption | Evaluate CRM effectiveness |
+| Engagement risk | Unsubscribe or opt-out behavior | Protect customer trust |
+
+Revenue should not be labeled profit unless contribution-margin and campaign-cost data are available. Definitions should be finalized before the analysis so that segments and campaign outcomes remain reproducible.
+
+## Analytics Methods
+
+::::::: columns
+:::: {.column width="50%"}
+**Descriptive and segmentation methods**
+
+::: incremental
+- Summarize visits, spending, recency, frequency, and identifier coverage.
+- Create RFM-style groups such as high-value, developing, at-risk, and inactive.
+- Compare cohorts and time periods to describe retention patterns.
+:::
+::::
+
+:::: {.column width="50%"}
+**Campaign evaluation methods**
+
+::: incremental
+- Compare exposed and non-exposed customers when a valid comparison exists.
+- Track second visits, repeat frequency, revenue, redemption, margin, and opt-outs.
+- Treat before-and-after results as descriptive when no control is available.
+:::
+::::
+:::::::
+
+The first deliverable is a validated customer-level summary. The next is a measurable email/SMS test that connects a defined treatment to profitable repeat-visit outcomes.
+
+## References
+
+Bolton, R. N., Kannan, P. K., & Bramlett, M. D. (2000). Implications of loyalty program membership and service experiences for customer retention and value. *Journal of the Academy of Marketing Science, 28*(1), 95–108.
+
+Kim, W. G., & Han, H. (2008). Determinants of restaurant customers' loyalty intentions: A mediating effect of relationship quality. *Journal of Quality Assurance in Hospitality & Tourism, 8*(3), 1–22.
+
+Kumar, V., & Reinartz, W. (2016). Creating enduring customer value. *Journal of Marketing, 80*(6), 36–68. [DOI](https://doi.org/10.1509/jm.15.0414)
+
+Lemon, K. N., & Verhoef, P. C. (2016). Understanding customer experience throughout the customer journey. *Journal of Marketing, 80*(6), 69–96. [DOI](https://doi.org/10.1509/jm.15.0420)
+
+Payne, A., & Frow, P. (2005). A strategic framework for customer relationship management. *Journal of Marketing, 69*(4), 167–176. [DOI](https://doi.org/10.1509/jmkg.2005.69.4.167)
+
+Reinartz, W., Krafft, M., & Hoyer, W. D. (2004). The customer relationship management process: Its measurement and impact on performance. *Journal of Marketing Research, 41*(3), 293–305.
+
+**Appendix links**
+
+- [Group 7 CEP project](https://falasol.github.io/MSDM-CEP/cep-group-7.html)
+- [Github Repo](https://falasol.github.io/MSDM-CEP/cep-group-7.html#sec-investigation-of-currently-available-research-frameworkmodel)
+- [Github Pages of This Slide](https://quarto.org/docs/presentations/revealjs/)
